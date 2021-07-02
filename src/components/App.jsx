@@ -1,5 +1,6 @@
 import React from 'react';
 
+import '../styles/components/app.css';
 export default function App() {
-  return <div>hello word</div>;
+  return <h1>hello word</h1>;
 }
