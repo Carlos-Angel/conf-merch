@@ -1,5 +1,5 @@
 import React, { useRef, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import AppContext from '../context/AppContext';
 
@@ -10,6 +10,7 @@ export default function Information() {
     state: { cart },
     addToBuyer,
   } = useContext(AppContext);
+  const history = useHistory();
   const form = useRef(null);
 
   const handleSubmit = () => {
@@ -27,6 +28,7 @@ export default function Information() {
     };
 
     addToBuyer(buyer);
+    history.push('/checkout/payment');
   };
 
   return (
