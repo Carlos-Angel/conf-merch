@@ -15,7 +15,8 @@ import useInitialState from '../hooks/useInitialState';
 
 export default function App() {
   const initialState = useInitialState();
-  return (
+  const isEmpty = Object.keys(initialState.state).length;
+  return isEmpty > 0 ? (
     <AppContext.Provider value={initialState}>
       <BrowserRouter>
         <Layout>
@@ -31,5 +32,7 @@ export default function App() {
         </Layout>
       </BrowserRouter>
     </AppContext.Provider>
+  ) : (
+    <h1>Cargando</h1>
   );
 }
